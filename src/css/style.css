@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+    background-color: #edebeb5c;
+
+}
+
+/* content */
+.content {
+    max-width: 720px;
+    /* height: 100vh; */
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* #agenda {
+    height: 100vh;
+} */
+
+/* .green {
+    background-color: #1db702;
+} */
+
+h3 {
+    color: #1db702;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+h4,
+p {
+    color: #0c1019
+}
+
+
+/* .white {
+    color: #ffffff;
+} */
+
+.menu {
+    text-align: right;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+#check {
+    display: none;
+}
+
+.button {
+    width: 48px;
+    height: 70px;
+    background: rgb(255, 196, 0);
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 8px;
+    line-height: 8px;
+    text-align: left;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 201;
+}
+
+.button:hover {
+    background: #ff9d00;
+}
+
+.button span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62, .43, .35, 1.47);
+}
+
+
+/* toggle icon animation */
+#check:checked~.button span:nth-child(1) {
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+#check:checked~.button span:nth-child(2) {
+    width: 0;
+}
+
+#check:checked~.button span:nth-child(3) {
+    width: 100%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    height: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22, .43, .35, 1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    text-align: center;
+    border-bottom: 1px solid #b4ac97;
+}
+
+nav a:hover {
+    background: #ffdd7f;
+}
+
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check:checked~nav {
+    height: 192px;
+}
+
+#check:checked~nav a {
+    padding: 10px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.sandwich {
+    display: none;
+}
+
+.menu-completo {
+    height: 70px;
+    background-color: #1db702;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-completo .logo {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.menu-completo .links {
+    display: flex;
+    flex-basis: 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-completo .start {
+    /* flex-basis: 15%; */
+    width: 200px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+
+.menu-completo .start a {
+    color: #1db702;
+}
+
+.menu-completo img {
+    max-width: 150px;
+}
+
+.menu-completo a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.detalhes a {
+    text-decoration: none;
+    color: #1c1c1ce2;
+    font-size: 1.5rem;
+}
+
+#agenda {
+    padding: 70px;
+}
+
+#time .row {
+    padding: 0;
+}
+
+@media screen and (max-width: 980px) {
+    .sandwich {
+        display: inline;
+    }
+
+    .menu-completo .links,
+    .start {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .content {
+        max-width: 540px
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content {
+        max-width: 720px;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 960px
+    }
+
+    #time .row {
+        padding: 0 150px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .content {
+        max-width: 1140px
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .content {
+        max-width: 1320px
+    }
+}
+
+.container-informacoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info {
+    width: 300px;
+    border-radius: 5%;
+    /* border: 1px solid rgb(177, 176, 176); */
+    margin: 20px 50px 20px 20px;
+}
+
+.card img {
+    width: 319px;
+    height: 300px;
+    border-radius: 1.1rem 1.1rem 0 0;
+}
+
+iframe {
+    width: 300px;
+    height: 170px;
+    border-radius: 0 0 5% 5%;
+}
+
+.detalhes {
+    color: #1db702;
+    text-align: left;
+    /* height: 100px; */
+    line-height: 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#agenda h2,
+#time h2,
+#projetos h2,
+#jornada h2 {
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 800;
+    color: #081828;
+    /* font-weight: bold; */
+}
+
+#time .card,
+.alert,
+.container-avisos .card {
+    --bs-border-radius: 2rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+#time .card:hover,
+.alert:hover,
+.container-avisos .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+#time .card {
+    width: 20rem;
+    margin: 20px;
+    border-radius: 1.1rem;
+}
+
+p {
+    font-size: 15px;
+    color: #888;
+    /* padding: 15px; */
+}
+
+.content i {
+    color: #6c757d;
+    margin: 5px;
+    font-size: 30px;
+}
+
+/* .card-body {
+    display: none;
+}
+
+.card:hover .card-body {
+    display: block;
+} */
+
+.agenda-avisos {
+    width: 50%;
+    margin-right: 40px;
+}
+
+#time .card-body {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+#time .card-title {
+    margin: 0;
+}
+
+#time .card-text {
+    font-size: 12px;
+    color: #1db702;
+    margin: 0;
+}
+
+/* .agenda-avisos {
+    display: flex;
+} */
+
+.container-avisos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-avisos .card {
+    margin: 10px;
+}
+
+/* #projetos {
+    height: 100vh;
+} */
+
+.container-projeto {
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-projeto {
+    width: 50%;
+    padding: 20px;
+}
+
+.imagem-projeto img {
+    width: 100%;
+}
+
+.info-projeto {
+    margin: 50px 0;
+    width: 400px;
+}
+
+.container-avisos .card {
+    width: 18rem;
+}
+
+.imagem-agenda {
+    width: 400px;
+    overflow: auto;
+}
+
+.imagem-agenda img {
+    width: 100%;
+}
+
+.container-agenda {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-format  {
+    text-decoration: none;
+    color: #1db702;
+}
+
+.container-projeto {
+    margin-top: 100px;
+}
+
+.card-video {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 992px) {
+    .container-agenda {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .imagem-agenda,
+    .agenda-avisos,
+    .container-avisos .card {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .container-projeto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .imagem-projeto {
+        width: 100%;
+    }
+
+    .info-projeto {
+        padding-top: 20px 0;
+        width: 100%;
+    }
+}
+
+.importante {
+    position: relative;
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    font-size: 1em;
+    letter-spacing: 1px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #f31515, #ee130b, #f50b0b);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, .1);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}
+
+
+#jornada {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* height: 100vh; */
+    padding-top: 70px;
+    text-align: center;
+}
