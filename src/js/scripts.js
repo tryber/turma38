@@ -305,7 +305,7 @@ const projects = [
         url: 'https://github.com/tryber/sd-038-supermercado-pirilampo',
         description: `Projeto para você construir funções utilizando JavaScript, para você praticar lógica de
         programação. Praticando if/else, laços de repetição, funções, objetos`,
-        points: 'Pontos: 55',
+        points: 'Pontos: 45',
     },
     {
         image: './assets/pixels-art.png',
