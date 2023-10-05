@@ -467,8 +467,8 @@ const createMural = () => {
 const createProjects = () => {
     const containerPrjetos = document.querySelector('.container-projetos');
 
-    projects.forEach((project) => {
-        const containerProjeto = document.createElement('div');
+    projects.forEach((project, index) => {
+        let containerProjeto = document.createElement('div');
         containerProjeto.classList.add('container-projeto');
 
         const imagemProjetoDiv = document.createElement('div');
@@ -491,7 +491,7 @@ const createProjects = () => {
         infoProjetoDiv.appendChild(pElement);
 
         const h3Element = document.createElement('h3');
-        h3Element.textContent = project.points;  
+        h3Element.textContent = project.points;
         infoProjetoDiv.appendChild(h3Element);
 
         const aElement = document.createElement('a');
@@ -501,10 +501,24 @@ const createProjects = () => {
         infoProjetoDiv.appendChild(aElement);
 
         containerProjeto.appendChild(infoProjetoDiv);
-
         containerPrjetos.appendChild(containerProjeto);
+
+        if (window.innerWidth > 992 && index % 2 === 0) {
+            containerProjeto.style.flexDirection = 'row-reverse';
+        }
     });
 }
+window.onresize = function() {
+    const containerProjeto = document.querySelectorAll('.container-projeto');
+    
+    containerProjeto.forEach((element, index) => {
+        if (window.innerWidth > 992) {
+            element.style.flexDirection = index % 2 === 0 ? 'row-reverse' : 'row';
+        } else {
+            element.style.flexDirection = 'column' ;
+        }
+    });
+};
 
 window.onload = () => {
     createTeam();
