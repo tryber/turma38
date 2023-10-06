@@ -265,8 +265,8 @@ const mural = [
         links: ["https://be-trybe.typeform.com/gituser"]
     },
     {
-        title: "📒 Agenda do Dia",
-        text: "Confira aqui todo detalhamento do dia",
+        title: "📒 Agenda da Semana",
+        text: "Confira aqui todo detalhamento da semana",
         linksTitle: ["Link para agenda da semana"],
         links: ["https://docsend.com/view/a48rde2ue8dug8m7"]
     },
