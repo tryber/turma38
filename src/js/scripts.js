@@ -267,8 +267,14 @@ const mural = [
     {
         title: "📒 Agenda do Dia",
         text: "Confira aqui todo detalhamento do dia",
-        linksTitle: ["Link para agenda do dia em breve"],
-        links: ["#"]
+        linksTitle: ["Link para agenda da semana"],
+        links: ["https://docsend.com/view/a48rde2ue8dug8m7"]
+    },
+    {
+        title: "📅 Agende um Papo conosco",
+        text: `Você pode agendar um papo com pessoas do time!`,
+        linksTitle: ["Confira agenda do time"],
+        links: ["https://trybecourse.slack.com/archives/C05U3DG5FEH/p1696628668947259"]
     },
     {
         title: "Projetos e Exercícios",
@@ -280,8 +286,8 @@ const mural = [
     {
         title: "🎥 Gravações/Códigos Aulas e Monitorias",
         text: "Consulte as gravações de aulas + repositório de códigos.",
-        linksTitle: ["Link para gravações na Plataforma em breve", "Link repositório"],
-        links: ["", "https://github.com/tryber/sd-038-live-lectures/pulls"]
+        linksTitle: ["Link para gravações na Plataforma", "Link repositório"],
+        links: ["https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/4d575a95-0a54-436b-a7b3-8e482da6186d", "https://github.com/tryber/sd-038-live-lectures/pulls"]
     },
     {
         title: "🗓 Calendários Letivos",
