@@ -280,8 +280,8 @@ const mural = [
         title: "Projetos e Exercícios",
         text: `Divulgação de todos os repositórios referente ao 1º Período de Fundamentos. 
                 <br><p class="importante">Abra PR uma ÚNICA vez.</p>`,
-        linksTitle: ["Mais informações  em breve"],
-        links: [""]
+        linksTitle: ["Mais informações aqui"],
+        links: ["https://trybecourse.slack.com/archives/C05U3DG5FEH/p1696852260937829"]
     },
     {
         title: "🎥 Gravações/Códigos Aulas e Monitorias",
